@@ -12,13 +12,6 @@ class CAVERNS_GAME_JAM_API ACharacterController : public ACharacter
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category="Player Stats")
-	float PlayerTotalHealth;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Player Stats")
-	float TimeToHeal;
-
-public:
 	// Sets default values for this character's properties
 	ACharacterController();
 
@@ -31,4 +24,8 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+private:
+	UPROPERTY(EditAnywhere)
+	class UCameraComponent* Camera;
 };
