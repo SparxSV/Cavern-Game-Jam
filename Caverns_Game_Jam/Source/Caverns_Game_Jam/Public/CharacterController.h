@@ -21,14 +21,9 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	UFUNCTION(BlueprintCallable, Category="Abilities")
-	void SpawnActor();
-
-	UPROPERTY(EditAnywhere)
-	TSubclassOf<AActor> ActorBPToSpawn;
-
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	// Handles the movement controls for character
 };

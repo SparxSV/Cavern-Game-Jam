@@ -15,7 +15,7 @@ ACharacterController::ACharacterController()
 void ACharacterController::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 }
 
 // Called every frame
@@ -29,13 +29,4 @@ void ACharacterController::Tick(float DeltaTime)
 void ACharacterController::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-}
-
-void ACharacterController::SpawnActor()
-{
-	FActorSpawnParameters spawnParams;
-	spawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
-
-	GetWorld()->SpawnActor<AActor>(ActorBPToSpawn, GetActorTransform(), spawnParams);
 }
