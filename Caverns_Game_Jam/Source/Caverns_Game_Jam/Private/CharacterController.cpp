@@ -3,12 +3,17 @@
 
 #include "CharacterController.h"
 
+#include "Camera/CameraComponent.h"
+
 // Sets default values
 ACharacterController::ACharacterController()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Player Camera"));
+	Camera->SetupAttachment(RootComponent);
+	Camera->bUsePawnControlRotation = true;
 }
 
 // Called when the game starts or when spawned
@@ -26,5 +31,6 @@ void ACharacterController::Tick(float DeltaTime)
 // Called to bind functionality to input
 void ACharacterController::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
-	UEnhancedInputComponent* Input = Cast<UEnhancedInputComponent>(PlayerInputComponent);
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
 }
