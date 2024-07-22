@@ -15,7 +15,6 @@ ACharacterController::ACharacterController()
 void ACharacterController::BeginPlay()
 {
 	Super::BeginPlay();
-
 }
 
 // Called every frame
@@ -27,5 +26,5 @@ void ACharacterController::Tick(float DeltaTime)
 // Called to bind functionality to input
 void ACharacterController::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
+	UEnhancedInputComponent* Input = Cast<UEnhancedInputComponent>(PlayerInputComponent);
 }
