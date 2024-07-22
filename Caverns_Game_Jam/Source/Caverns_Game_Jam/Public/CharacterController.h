@@ -12,12 +12,10 @@ class CAVERNS_GAME_JAM_API ACharacterController : public ACharacter
 	GENERATED_BODY()
 
 public:
-	
-
-	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category="Stats")
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category="Player Stats")
 	float PlayerTotalHealth;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Player Stats")
 	float TimeToHeal;
 
 public:
